@@ -1,0 +1,49 @@
+extends ./assets/pug/layout
+block main
+    include ./assets/pug/header_title
+    section.form-header.container 
+        .row 
+            .col 
+            .col.form-header-title
+                .form-header-title.text-dark.p-5
+                    h3.flex-center.fw-600 Đăng ký
+                    span.px-5.flex-center.fz-12.fw-500.text-center.lh-base Hãy đăng ký để được hưởng nhiều đặc quyền riêng dành cho bạn
+    section.form-body.container 
+        .row
+            .form-left.col
+                img(src="./images/img-pr-4.jpg", alt="alt").rounded-5 
+            .form-right.col
+                .form-content   
+                    form(action="" method="method").row.fw-500.text-dark
+                        .col-md-6.pt-3
+                            label(for="lastName").form-label.fz-12 Last name 
+                            input(type="text", name="" id="lastName" required placeholder="Nhập họ của bạn" ).form-control
+                        .col-md-6.pt-3
+                            label(for="fistName").form-label.fz-12 Fist name 
+                            input(type="text", name="" id="fistName" required placeholder="Nhập tên của bạn" ).form-control
+                        .col-md-12.pt-3
+                            label(for="account").form-label.fz-12.pb-2 Tài Khoản 
+                            input(type="text", name="" id="lastName" required placeholder="Nhập tài khoản" ).form-control
+                        .col-md-12.pt-3
+                            label(for="email").form-label.fz-12.pb-2 Email
+                            input(type="text", name="" id="email" required placeholder="Nhập email" ).form-control
+                        .col-md-12.pt-3
+                            label(for="passwork").form-label.fz-12.pb-2 Mật khẩu
+                            .input-pass.d-flex.align-items-center.border.bg-white.rounded
+                                input(type="text", name="" id="passwork" required placeholder="Nhập tài khoản" ).form-control.border-0
+                                ion-icon(name="eye-outline").fz-12.px-3.pointer
+                .form-check.d-flex.align-items-center.fz-1.text-dark.gap-2.py-3     
+                    input.form-check-input(type="checkbox", name="")
+                    span Chập nhận chính sách của Anna
+                .form-button.btn.button-secondary.col-md-12 Đăng nhập
+                .form-forget.py-3.flex-center  
+                    span.text-dark.fz-1 Hoặc
+                .form-social.flex-center.gap-2.fz-1.fw-500.py-3
+                    img(src="./images/gg.svg", alt="")
+                    a(href="").unlink.text-dark  Google
+                .form-social.flex-center.gap-2.fz-1.fw-500.py-3
+                    img(src="./images/fb.svg", alt="")
+                    a(href="").unlink.text-dark   Facebook
+                .form-question.flex-center.text-dark.fz-1.gap-2.py-3  
+                    span Bạn đã có tài khoản Anna?
+                    a(href="#") Đăng nhập ngay 

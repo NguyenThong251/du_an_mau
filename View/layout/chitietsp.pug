@@ -1,0 +1,118 @@
+extends ./assets/pug/layout
+block main
+    include ./assets/pug/header_title
+    section.header-list.container.py-5.d-flex.gap-2.align-items-center
+        a(href="").text-dark.fz-1.fw-600.unlink Trang chủ 
+        .list.d-flex.gap-2.align-items-center
+            ion-icon(name="ellipse-sharp").color-primary
+            a(href="").text-dark.fz-1.fw-600.unlink Sản phẩm 
+        .list.d-flex.gap-2.align-items-center
+            ion-icon(name="ellipse-sharp").color-primary
+            a(href="").text-dark.fz-1.fw-600.unlink Gọng kính
+    section.section-detail-primary.container 
+        .section-detail-primary-body.row
+            .section-detail-primary-left.col 
+                img(src="./images/product-3.jpg", alt="").section-detail-primary-img.img-25   
+            .section-detail-primary-right.col.border-bottom
+                .section-detail-primary-right-content.d-flex.gap-3.flex-column
+                    h3.section-detail-primary-right-name.text-dark   GK – 550CN035
+                    .section-detail-primary-right-price.fz-2    
+                        span.section-detail-primary-right-priceOld.text-danger.fw-500  495,000₫  
+                        del.section-detail-primary-right-pricenew.text-dark-80 550,000₫ 
+                    .codeProduct.text-dark.fz-1 
+                        span Mã sản phẩm:
+                        span 550CN035
+                    .codeMaterial.text-dark.fz-1  
+                        span Chất liệu:
+                        span Titantium
+                    .codeColor.text-dark.fz-1  
+                        span Màu sắc:
+                        span Nâu xanh, đen trắng, hồng, nâu, trắng hồng, xanh hồng, xanh sữa, ghi cam, đen hồng, ghi hồng.
+                    .section-detail-primary-right-ship.d-flex.align-items-center.gap-2
+                        img(src="./images/delivery.png", alt="").section-detail-primary-right-ship-icon.img-05   
+                        span.section-detail-primary-right-ship-text.text-dark.fz-1  Miễn phí giao hàng từ 500k ( vận chuyển 3 - 5 ngày )
+                    .section-detail-primary-right-quatity.d-flex.align-items-center.gap-2
+                        span.text-dark.fz-1  Số lượng
+                        input(type="number", name="" value="1").section-detail-primary-right-ship-number.text-dark.w-5.fz-1.border-0 
+                    .section-detail-primary-right-footer
+                        .section-detail-primary-right-footer-icon.d-flex.align-items-center.gap-2 
+                            ion-icon(name="heart-outline").text-dark.fz-16.border.border-secondary.p-1.rounded-3.pointer
+                            button.btn.button-app Thêm vào giỏ hàng
+    section.section-detail-secondary.container.py-5 
+        .section-detail-secondary-body.row
+            .section-detail-secondary-left.col
+                .row.row-cols-5
+                    img(src="./images/product-1.jpg", alt="alt").col 
+                    img(src="./images/product-2.jpg", alt="alt").col 
+                    img(src="./images/product-3.jpg", alt="alt").col 
+            .section-detail-secondary-right.col
+                .row-cols-3.row
+                   +policyItem("cube-outline","Bảo hành trọn đời","Bảo hành ốc vít rơi ra, gọng lệch, gọng kênh vênh, lỏng chật, rơi ve đệm mũi trọn đời.")
+                   +policyItem("chatbox-ellipses-outline","Giao hàng tận nơi","Giao hàng tận nơi, được kiểm tra hàng trước khi thanh toán")
+                   +policyItem("gift-outline","Đổi trả dễ dàng","Bảo hành 1 đổi 1 khi có lỗi của nhà sản xuất, lỗi do đo mắt sai (trong 10 ngày đầu), hỗ trợ giảm 50% nếu đổi gọng mới")
+    section.section-detail-third.container
+        .row.row-cols-2  
+            .section-detail-third-left
+                .section-detail-third-left-navList.fz-1.d-flex.gap-3.fw-600
+                    a(href="").unlink.py-2.pointer.text-dark.activeList Thông tin
+                    a(href="").unlink.py-2.pointer.text-dark Chính sách vận chuyển 
+                    a(href="").unlink.py-2.pointer.text-dark Chính sách đổi trả
+                .section-detail-third-left-content.fz-08.text-dark.d-flex.flex-column.gap-2.pt-5
+                    p Chịu trách nhiệm sản phẩm: Công Ty TNHH Dịch vụ và Thương mại Anna Việt Nam
+                    span Cảnh báo: Bảo quản trong hộp kính
+                    span Hướng dẫn sử dụng:
+                    span + Tháo kính bằng 2 tay
+                    span + Không bỏ kính vào cốp xe hoặc những nơi có nhiệt độ cao làm biến dạng kính.
+                    span + Không bỏ kính vào túi sách nếu không có hộp kính, vật dụng nhọn như chìa khóa sẽ làm xước kính
+                    span .+ Không rửa kính lau kính bằng các chất có tính tẩy rửa mạnh làm bong tróc lớp váng phủ
+            .section-detail-third-right 
+                img(src="./images/img-pr-2.png", alt="")
+    section
+        .container.py-5
+            .row
+                .col-md-12
+                    .card
+                        .card-body
+                            .d-flex.flex-start.align-items-center
+                                img.rounded-circle.shadow-1-strong.me-3.img-04(src='./images/th2.jpg' alt='avatar')
+                                div
+                                    h6.fw-bold.text-primary.mb-1.text-dark Hoàng Thông
+                                    p.text-muted.small.mb-0 Shared publicly - Jan 2020
+                            p.mt-3.mb-4.pb-2.fz-8.text-dark.lh-base  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            .small.d-flex.justify-content-start
+                                a.d-flex.align-items-center.me-3.unlink.gap-2.text-dark(href='#!')
+                                    ion-icon.fz-1(name="heart-outline")
+                                    p.mb-0.fz-1 Yêu thích
+                                a.d-flex.align-items-center.me-3.unlink.gap-2.text-dark(href='#!')
+                                    ion-icon.fz-1(name="chatbox-ellipses-outline")
+                                    p.mb-0.fz-1 Comment
+                                a.d-flex.align-items-center.me-3.unlink.gap-2.text-dark(href='#!')
+                                    ion-icon.fz-1(name="share-outline")
+                                    p.mb-0.fz-1  Share
+                        .card-footer.py-3.border-0(style='background-color: #f8f9fa;')
+                            .d-flex.flex-start.w-100
+                                img.rounded-circle.shadow-1-strong.me-3.img-03(src='./images/th2.jpg' alt='avatar')
+                                .form-outline.w-100
+                                    textarea#textAreaExample.form-control(rows='4' style='background: #fff;')
+                                    label.form-label(for='textAreaExample') Message
+                            .float-end.mt-2.pt-1
+                                button.btn.button-app.btn-sm(type='button') Post comment
+                                button.btn.button-app-outline.btn-sm(type='button') Cancel
+    section.section-product-hot.container.py-3
+        .section-product-hot-title 
+            h3.section-product-hot-title-content.text-dark.fw-600 SẢN PHẨM NỔI BẬT
+        .section-product-hot.row.py-3.row-cols-5
+            +product("./images/product-1.jpg","GK - CK87","380.000","280.000","40000")
+            +product("./images/product-1.jpg","GK - CK87","380.000","280.000","40000")
+            +product("./images/product-1.jpg","GK - CK87","380.000","280.000","40000")
+            +product("./images/product-1.jpg","GK - CK87","380.000","280.000","40000")
+            +product("./images/product-1.jpg","GK - CK87","380.000","280.000","40000")
+    section.section-product-new.container.py-3
+        .section-product-new-title 
+            h3.section-product-new-title-content.text-dark.fw-600 SẢN PHẨM MỚI NHẤT
+        .section-product-new.row.py-3
+            .col-4.section-product-new-img
+                img(src="./images/img-pr.jpg", alt="alt").img-cover.rounded-10
+            +product("./images/product-1.jpg","GK - CK87","380.000","280.000","40000")
+            +product("./images/product-1.jpg","GK - CK87","380.000","280.000","40000")
+            +product("./images/product-1.jpg","GK - CK87","380.000","280.000","40000")

@@ -1,0 +1,38 @@
+extends ./assets/pug/layout
+block main
+    include ./assets/pug/header_title
+    section.viewCart-body.container 
+        .viewCart-body-main.row.row-cols-2.py-5 
+            .viewCart-body-left.col-8
+                .viewCart-body-left-header.row.fz-1.text-dark.fw-600.py-3
+                    .col-5
+                        span Thông tin sản phẩm 
+                    .col.flex-center
+                        span Giá 
+                    .col.flex-center
+                        span Số lượng  
+                    .col.flex-center
+                        span Tổng cộng
+                .viewCart-body-left-main.border-top.border-bottom
+                    +viewCart-product("./images/product-1.jpg","GK - 380CK071","342,000₫","342,000₫")
+                .viewCart-body-left-footer.py-3.d-flex.gap-2
+                    a(href="").btn.button-secondary Tiếp tục mua hàng
+                    a(href="").btn.button-secondary Xóa tất cả sản phẩm 
+            .viewCart-body-right.col-4
+                .viewCart-body-right-header.border-bottom 
+                    span.viewCart-body-right-title.fz-1.text-dark.fw-600.py-3.flex-center Thông tin thanh toán 
+                .viewCart-body-right-total_1.py-5.border-bottom.d-flex.gap-2
+                    span.text-dark.fz-1.fw-500 Tạm tính:
+                    span.text-dark.fz-1.fw-500 900.000đ
+                .viewCart-body-right-total_2.py-5.d-flex.gap-2
+                    span.text-dark.fz-1.fw-600 Tổng cộng:
+                    span.text-dark.fz-1.fw-600 900.000đ
+                .viewCart-body-right-footer.py-3.d-flex.gap-2
+                    a(href="").btn.button-secondary Tiến hành thanh toán
+                .payment.d-flex.flex-column.gap-3.py-3
+                    span.flex-center.text-dark.fw-600.fz-1 Chúng tôi chấp nhận thanh toán 
+                    .payment-icon.d-flex.gap-2.flex-center   
+                        img(src="./images/visa-1.png", alt="")
+                        img(src="./images/visa-2.png", alt="")
+                        img(src="./images/visa-3.png", alt="")
+                        img(src="./images/visa-4.png", alt="")

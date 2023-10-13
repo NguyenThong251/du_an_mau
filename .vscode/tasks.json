@@ -1,0 +1,50 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run sass",
+      "type": "shell",
+      "command": "sass View/layout/assets/scss/app.scss  View/layout/assets/css/app.css --watch"
+    },
+    {
+      "label": "Run pug",
+      "type": "shell",
+      "command": "pug View/layout/index.pug --watch --pretty"
+    },
+    {
+      "label": "Run pug product",
+      "type": "shell",
+      "command": "pug View/layout/sanpham.pug --watch --pretty"
+    },
+    {
+      "label": "Run pug detail",
+      "type": "shell",
+      "command": "pug View/layout/chitietsp.pug --watch --pretty"
+    },
+    {
+      "label": "Run pug viewcart",
+      "type": "shell",
+      "command": "pug View/layout/giohang.pug --watch --pretty"
+    },
+    {
+      "label": "Run pug pay",
+      "type": "shell",
+      "command": "pug View/layout/thanhtoan.pug --watch --pretty",
+      "problemMatcher": []
+    },
+    {
+      "label": "Run pug login",
+      "type": "shell",
+      "command": "pug View/layout/dangnhap.pug --watch --pretty",
+      "problemMatcher": []
+    },
+    {
+      "label": "Run pug signup",
+      "type": "shell",
+      "command": "pug View/layout/dangky.pug --watch --pretty",
+      "problemMatcher": []
+    }
+  ]
+}

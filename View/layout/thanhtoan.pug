@@ -1,0 +1,72 @@
+extends ./assets/pug/layout
+block main
+    include ./assets/pug/header_title
+    section.payment.container
+        .payment-body.row.py-5 
+            .payment-left.col.text-dark
+                h3.payment-left-title.fz-16.fw-600 THANH TOÁN 
+                form(action="" method="method").row.fw-500
+                    .col-md-6.pt-3
+                        label(for="lastName").form-label.fz-1 Last name 
+                        input(type="text", name="" id="lastName" required placeholder="Nhập họ của bạn" ).form-control
+                    .col-md-6.pt-3
+                        label(for="fistName").form-label.fz-1 Fist name 
+                        input(type="text", name="" id="fistName" required placeholder="Nhập tên của bạn" ).form-control
+                    .col-md-12.pt-3
+                        label(for="phone").form-label.fz-1 Số điện thoại
+                        input(type="text", name="" id="phone" required placeholder="Số điện thoại của bạn" ).form-control
+                    .col-md-12.pt-3
+                        label(for="email").form-label.fz-1 Email
+                        input(type="text", name="" id="email" required placeholder="Nhập email của bạn" ).form-control
+                    .col-md-4.pt-3
+                        label(for="city").form-label.fz-1 Thành phố/Tỉnh
+                        input(type="text", name="" id="city" required placeholder="Nhập thành phố/tỉnh" ).form-control
+                    .col-md-4.pt-3
+                        label(for="district").form-label.fz-1 Huyện
+                        input(type="text", name="" id="district" required placeholder="Nhập tên huyện" ).form-control
+                    .col-md-4.pt-3
+                        label(for="commune").form-label.fz-1 Xã
+                        input(type="text", name="" id="commune" required placeholder="Nhập tên xã" ).form-control
+                    .col-md-12.pt-3
+                        label(for="note").form-label.fz-1 Ghi chú
+                        textarea(type="text", name="" id="note" required placeholder="Ghi chú " ).form-control
+            .payment-right.col.bg-dark-50.rounded-5
+                .payment-right-body.p-5     
+                    span.payment-right-title.fz-12.text-dark.fw-600 Nhập mã giảm giá
+                        .qr-code.row.pt-3.d-flex.justify-content-between
+                            .col-md-8
+                                input(type="text").form-control   
+                            .col-md-4.d-flex.justify-content-end
+                                button.btn.button-app-outline Áp dụng   
+                    .payment-right-text.d-flex.fw-500.justify-content-between.py-3.fz-1.text-dark
+                        span Sản phẩm 
+                        span Thành tiền 
+                    .payment-right-product.row.d-flex.justify-content-between.align-items-center
+                        .payment-right-productLeft.col-8.fz-08.fw-400.text-dark
+                            .row.d-flex.justify-content-between.align-items-center
+                                .payment-right-productLeft-img.col-4
+                                    img(src="./images/product-1.jpg", alt="alt").col.img-cover
+                                span.payment-right-productLeft-name.col-6 GK-550CN040  
+                                span.payment-right-productLeft-quality.col-2 x1 
+                        .payment-right-productRight.col-4
+                            span.payment-right-productRight.d-flex.justify-content-end.align-items-center.fz-08.fw-400.text-dark 495,000đ
+                    .payment-right-text.d-flex.fw-500.justify-content-between.py-5.fz-1.text-dark.border-bottom
+                        span Tạm tính 
+                        span.color-primary.fw-600 495.000đ
+                    .payment-right-text.d-flex.fw-500.justify-content-between.py-5.fz-1.text-dark
+                        span Tổng cộng
+                        span.color-primary.fw-600 495.000đ
+    section.payment-footer.container
+        .row
+            .col 
+            .col.text-dark.d-flex.flex-column.gap-3
+                span.text-dark.fz-1 Phương thức thanh toán  
+                .payment-option.fz-08.d-flex.gap-2   
+                    ion-icon(name="ellipse")
+                    span Trả tiền khi nhân hàng
+                .payment-footer-content.fz-1 
+                    span.lh-base Thông tin cá nhân của bạn sẽ được sử dụng để xử lý đơn hàng và cho các mục đích cụ thể khác đã được mô tả trong 
+                    a(href="") chính sách riêng tư
+                    | của chúng tôi.
+                .payment-footer-button 
+                button.btn.button-secondary Đặt hàng ngay

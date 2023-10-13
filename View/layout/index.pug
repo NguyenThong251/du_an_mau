@@ -1,0 +1,135 @@
+extends ./assets/pug/layout
+block main
+    include ./assets/pug/header_title
+    section.slider 
+        .slider-imgage.container-fuild
+            img(src="/View/layout/images/slide1.png", alt="").img-cover
+            form(action="", method="").slider-search.d-flex.gap-3
+                input(type="text", name="search" placeholder="Tìm kiếm sản phẩm").w-20.border-dark.rounded-3.text-dark.fz-1.fw-500.px-2
+                input(type="submit", value="Tìm kiếm").btn.button-app
+    section.banner.pt-3
+        .container  
+            .row    
+                .banner-left.col.position-relative
+                    .banner-left_img.rounded-10
+                        img(src="/View/layout/images/silde4.jpg", alt="alt").rounded-10.img-cover  
+                    button.banner-left_button.position-absolute.btn.fw-800.fz-14.text-white CHỌN KÍNH NGAY
+                .banner-right.col
+                    .row.banner-right_body
+                        .col.banner-right_img.rounded-10
+                            img(src="/View/layout/images/silde7.jpg", alt="").img-cover103.rounded-10
+                        .col.banner-right_img.rounded-10
+                            img(src="/View/layout/images/silde7.jpg", alt="").img-cover103.rounded-10 
+                        .banner-right_icon
+                            ion-icon(name='chevron-back-circle-outline').fz-3.bg-dark-50.rounded-circle
+    section.section-sale.container.py-5
+        .section-sale-header.d-flex.justify-content-between.bg-primary.rounded-top
+            .section-sale-header-left.py-3.px-3
+                h3.section-sale-title.fw-700 SĂN FLASH SALE
+                span.section-sale-content.fz-1 Hàng trăm sản phẩm bắt trend mới nhất
+            .section-sale-header-right
+        .section-sale-body.bg-primary-50.rounded-bottom
+            .section-product.row.py-5.px-5.row-cols-4
+                +product("./images/product-1.jpg","GK - CK87","380.000","280.000","40000")
+                +product("./images/product-1.jpg","GK - CK87","380.000","280.000","40000")
+                +product("./images/product-1.jpg","GK - CK87","380.000","280.000","40000")
+                +product("./images/product-1.jpg","GK - CK87","380.000","280.000","40000")
+        .section-sale-arrow.d-flex.justify-content-between.mx-3
+            ion-icon(name='chevron-back-circle-outline').section-sale-arrow_icon.fz-3.bg-dark-50.rounded-circle
+            ion-icon(name='chevron-forward-circle-outline').section-sale-arrow_icon.fz-3.bg-dark-50.rounded-circle
+    section.hot
+        .hotProduct.container.rounded-top
+            .hotProduct-main.container
+                .hotProduct-header.py-3.d-flex.justify-content-between
+                    .hotProduct-header-text.d-flex.flex-column.gap-1
+                        span.hotProduct-header-title.fw-400.fz-1.text-white HOT TREND
+                        h3.hotProduct-header-content.fw-700 HÀNG MỚI LÊN KỆ 
+                    .hotProduct-header-option.d-flex.align-items-center
+                        ul.nav.gap-3
+                            li.nav-item
+                                a.nav-link.text-white.fz-1.hotProduct-header-option-link.hotProduct-header-option--active(href='#') Mắt kính
+                            li.nav-item
+                                a.nav-link.text-white.fz-1.hotProduct-header-option-link(href='#') Gọng kính 
+                            li.nav-item
+                                a.nav-link.text-white.fz-1.hotProduct-header-option-link(href='#') Kính râm 
+        .hotProduct-body.container.bg-primary-50
+            .hotProduct-dody-main.row.px-5.py-5.row-cols-4
+                +product("./images/product-1.jpg","GK - CK87","380.000","280.000","40000")
+                +product("./images/product-1.jpg","GK - CK87","380.000","280.000","40000")
+                +product("./images/product-1.jpg","GK - CK87","380.000","280.000","40000")
+                +product("./images/product-1.jpg","GK - CK87","380.000","280.000","40000")
+                +product("./images/product-1.jpg","GK - CK87","380.000","280.000","40000")
+                +product("./images/product-1.jpg","GK - CK87","380.000","280.000","40000")
+                +product("./images/product-1.jpg","GK - CK87","380.000","280.000","40000")
+                +product("./images/product-1.jpg","GK - CK87","380.000","280.000","40000")
+        .hotProduct-footer.py5.flex-center.py-3
+            a(href="http://") 
+                button.btn.text-white.fw-500.fz-1.bg-dark.px-4.hotProduct-footer-btn XEM TẤT CẢ  
+    section.glassFind.container.py-5
+        .glassFind-header
+            .glassFind-header-content.d-flex.flex-column.gap-1
+                span.glassFind-header-title.fw-400.fz-1.text-dark CHỌN KÍNH ONLINE
+                h3.glassFind-header-content.fw-700.text-dark TÌM KÍNH PHÙ HỢP
+        .glassFind-body.d-flex.py-3.row
+            .glassFind-body-left.col
+                .glassFind-body-img.rounded-5
+                    img.rounded-5.img-h411(src="./images/find-1.jpg", alt="alt")
+            .glassFind-body-right.col
+                .glassFind-body-right-content.p-5.d-flex.flex-column
+                    .glassFind-body-right-icon.flex-center
+                        img.img-cover20.p-3.rounded-circle.bg-primary-50(src="./images/logo_kinh2.svg", alt="alt")
+                    h3.glassFind-body-right-title.text-dark.color-primary.fz-16.fw-700.flex-center Kích thước khung
+                    span.glassFind-body-right-text.text-dark.fz-1.text-center.lh-base Chọn Kích thước khung phù hợp nhất để giúp dễ dàng vừa vặn, thoải mái và tiện lợi cho bạn.
+                    .glassFind-body-right-link.flex-center.gap-2
+                        span.glassFind-body-right-link-text.fz-1.text-dark.fw-500 Cách đo kích thước khung hình của bạn
+                        a.unlink(href="#") 
+                            ion-icon.text-dark.fz-16(name='arrow-forward-outline') 
+        .glassFind-body.d-flex.py-3.row
+            .glassFind-body-right.col
+                .glassFind-body-right-content.p-5.d-flex.flex-column
+                    .glassFind-body-right-icon.flex-center
+                        img.img-cover20.p-3.rounded-circle.bg-primary-50(src="./images/icon_kinh.svg", alt="alt")
+                    h3.glassFind-body-right-title.text-dark.color-primary.fz-16.fw-700.flex-center Kích thước khung
+                    span.glassFind-body-right-text.text-dark.fz-1.text-center.lh-base Chọn Kích thước khung phù hợp nhất để giúp dễ dàng vừa vặn, thoải mái và tiện lợi cho bạn.
+                    .glassFind-body-right-link.flex-center.gap-2
+                        span.glassFind-body-right-link-text.fz-1.text-dark.fw-500 Cách đo kích thước khung hình của bạn
+                        a.unlink(href="#") 
+                            ion-icon.text-dark.fz-16(name='arrow-forward-outline') 
+            .glassFind-body-left.col
+                .glassFind-body-img.rounded-5
+                    img.rounded-5.img-h411(src="./images/find-2.jpg", alt="alt")
+    section.findMap.container
+        .findMap-header.d-flex.justify-content-between.align-item-center
+            .findMap-header-left.d-flex.flex-column.gap-1
+                span.fw-400.fz-1.text-dark ĐỊA ĐIỂM
+                h3.fw-700.text-dark HỆ THỐNG CỬA HÀNG
+            .findMap-header-right
+                a(href="http://") 
+                    button.btn.text-white.fw-500.fz-1.bg-dark.px-4.findMap-footer-btn Tìm kiếm cơ sở  
+        .findMap-body  
+            .row.findMap-body-main
+                .col-8.findMap-body-left
+                    img.col-8.findMap-body-img.img-600(src="/View/layout/images/store-1.jpg", alt="") 
+                .col-4.findMap-body-right 
+                    img.col-8.findMap-body-img.img-600(src="/View/layout/images/store-2.jpg", alt="") 
+    section.customer.container.py-5
+        .customer-header.d-flex.justify-content-between.align-item-center
+            .customer-header-left.d-flex.flex-column.gap-1
+                span.fw-400.fz-1.text-dark TÌNH THƯƠNG MẾN THƯƠNG
+                h3.fw-700.text-dark KHÁCH HÀNG THÂN YÊU
+        .customer-body.pt-3
+            .row.customer-body-main
+                +customerItem("/View/layout/images/person-1","Thong","bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb")
+                +customerItem("/View/layout/images/person-1","Thong","bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb")
+                +customerItem("/View/layout/images/person-1","Thong","bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb")
+    section.question.container
+        .question-header.d-flex.justify-content-between.align-item-center
+            .question-header-left.d-flex.flex-column.gap-1
+                span.fw-400.fz-1.text-dark HỎI ĐÁP 
+                h3.fw-700.text-dark KHÁCH HÀNG THÂN YÊU
+        .question-body.pt-3
+            .row.question-body-main
+                +questionItem("Cận thị có tự giảm không ?","Mức độ tối màu của thấu kính không ảnh hưởng đến tác dụng bảo vệ mắt khỏi tia cực tím. Thay vào đó, khả năng này được xác định bằng công nghệ sản xuất thấu kính hoặc loại polyme nhựa của thấu kính nhé bạn ơi")
+                +questionItem("Cho em xin chi phí đo mắt bên mình nhé ?","Mức độ tối màu của thấu kính không ảnh hưởng đến tác dụng bảo vệ mắt khỏi tia cực tím. Thay vào đó, khả năng này được xác định bằng công nghệ sản xuất thấu kính hoặc loại polyme nhựa của thấu kính nhé bạn ơi")
+                +questionItem("Vừa loạn vừa cận có cắt tròng đổi màu được không ?","Mức độ tối màu của thấu kính không ảnh hưởng đến tác dụng bảo vệ mắt khỏi tia cực tím. Thay vào đó, khả năng này được xác định bằng công nghệ sản xuất thấu kính hoặc loại polyme nhựa của thấu kính nhé bạn ơi")
+                +questionItem("Màu của kính râm có ảnh hưởng tới chống tia cực tím không ?","Mức độ tối màu của thấu kính không ảnh hưởng đến tác dụng bảo vệ mắt khỏi tia cực tím. Thay vào đó, khả năng này được xác định bằng công nghệ sản xuất thấu kính hoặc loại polyme nhựa của thấu kính nhé bạn ơi")

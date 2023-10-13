@@ -1,0 +1,45 @@
+extends ./assets/pug/layout
+block main
+    include ./assets/pug/header_title
+    +bannerTitle("SẢN PHẨM","Trang chủ","Sản phẩm")
+    .store-body.container.pt-5
+        .store-body-title 
+            h3.store-body-title_Content.flex-center.text-dark SẢN PHẨM ĐƯỢC YÊU THÍCH NHẤT
+        .store-body-main.row
+            .store-body-left.col-2
+                .store-body-left-main.text-dark.ps-3
+                    +productList("Sản phẩm","Gọng Kính","Kính áp tròng","Gọng Kính","Gọng Kính")
+                    +productList("Chất liệu","Acetate","Kim loại","Nhựa","Nhựa Dẻo")
+                    +productList("Thương hiệu","Chemi","Elements","Essilor","Hoga")
+            .store-body-right.col-10
+                .row.row-cols-4
+                    +product-Item("GK – 0123459","350,000₫","300,000₫")
+                    +product-Item("GK – 0123459","350,000₫","300,000₫")
+                    +product-Item("GK – 0123459","350,000₫","300,000₫")
+                    +product-Item("GK – 0123459","350,000₫","300,000₫")
+                    +product-Item("GK – 0123459","350,000₫","300,000₫")
+                    +product-Item("GK – 0123459","350,000₫","300,000₫")
+                    +product-Item("GK – 0123459","350,000₫","300,000₫")
+                    +product-Item("GK – 0123459","350,000₫","300,000₫")
+                    +product-Item("GK – 0123459","350,000₫","300,000₫")
+                    +product-Item("GK – 0123459","350,000₫","300,000₫")
+                    +product-Item("GK – 0123459","350,000₫","300,000₫")
+                    +product-Item("GK – 0123459","350,000₫","300,000₫")               
+    section.section-product-hot.container.py-3
+        .section-product-hot-title 
+            h3.section-product-hot-title-content.text-dark.fw-600 SẢN PHẨM NỔI BẬT
+        .section-product-hot.row.py-3.row-cols-5
+            +product("./images/product-1.jpg","GK - CK87","380.000","280.000","40000")
+            +product("./images/product-1.jpg","GK - CK87","380.000","280.000","40000")
+            +product("./images/product-1.jpg","GK - CK87","380.000","280.000","40000")
+            +product("./images/product-1.jpg","GK - CK87","380.000","280.000","40000")
+            +product("./images/product-1.jpg","GK - CK87","380.000","280.000","40000")
+    section.section-product-new.container.py-3
+        .section-product-new-title 
+            h3.section-product-new-title-content.text-dark.fw-600 SẢN PHẨM MỚI NHẤT
+        .section-product-new.row.py-3
+            .col-4.section-product-new-img
+                img(src="./images/img-pr.jpg", alt="alt").img-cover.rounded-10
+            +product("./images/product-1.jpg","GK - CK87","380.000","280.000","40000")
+            +product("./images/product-1.jpg","GK - CK87","380.000","280.000","40000")
+            +product("./images/product-1.jpg","GK - CK87","380.000","280.000","40000")
