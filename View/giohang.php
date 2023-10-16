@@ -60,7 +60,8 @@ $html_cart .= '
             </form>
             <div class="viewCart-body-right-total_2 py-5 d-flex gap-2"><span class="text-dark fz-1 fw-600">Tổng
                     cộng:</span><span class="text-dark fz-1 fw-600"><?=$thanhtoan?></span></div>
-            <div class="viewCart-body-right-footer py-3 d-flex gap-2"><a class="btn button-secondary" href="">Tiến hành
+            <div class="viewCart-body-right-footer py-3 d-flex gap-2"><a class="btn button-secondary"
+                    href="index.php?pg=donhang">Tiến hành
                     thanh toán</a></div>
             <div class="payment d-flex flex-column gap-3 py-3"><span class="flex-center text-dark fw-600 fz-1">Chúng tôi
                     chấp nhận thanh toán </span>

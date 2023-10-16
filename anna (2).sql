@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 13, 2023 lúc 04:23 PM
+-- Thời gian đã tạo: Th10 16, 2023 lúc 06:50 PM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.2.4
 
@@ -30,10 +30,21 @@ SET time_zone = "+00:00";
 CREATE TABLE `binh_luan` (
   `id_cmt` int(9) NOT NULL,
   `noi_dung` text NOT NULL,
-  `ngay_cmt` datetime NOT NULL,
+  `ngay_cmt` varchar(50) NOT NULL,
+  `ho_ten` varchar(100) NOT NULL,
   `id_user` int(9) NOT NULL,
   `id_sp` int(9) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `binh_luan`
+--
+
+INSERT INTO `binh_luan` (`id_cmt`, `noi_dung`, `ngay_cmt`, `ho_ten`, `id_user`, `id_sp`) VALUES
+(5, 'rửaerwer', '18:34:53 16/10/2023', '', 4, 4),
+(6, 'hi local\r\n', '18:42:36 16/10/2023', 'Hoàng thông', 4, 4),
+(7, '', '18:46:56 16/10/2023', 'Hoàng thông', 4, 4),
+(8, 'lỗi vcl\r\n', '18:49:59 16/10/2023', 'Hoàng thông', 4, 4);
 
 -- --------------------------------------------------------
 
@@ -85,6 +96,7 @@ CREATE TABLE `don_hang` (
   `ma_KH` varchar(100) NOT NULL,
   `ten_ND` varchar(300) NOT NULL,
   `dia_chi_ND` varchar(300) NOT NULL,
+  `email_ND` varchar(100) NOT NULL,
   `sdt_ND` varchar(300) NOT NULL,
   `ship` int(6) NOT NULL DEFAULT 0,
   `voucher` int(6) NOT NULL DEFAULT 0,
@@ -92,6 +104,29 @@ CREATE TABLE `don_hang` (
   `tongthanhtoan` int(9) NOT NULL,
   `pttt` tinyint(1) NOT NULL COMMENT '0: COD; 1:Thanh toán online; 3: Chuyển khoản'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `don_hang`
+--
+
+INSERT INTO `don_hang` (`id_don_hang`, `id_user`, `ma_donhang`, `ten_NN`, `dia_chi_NN`, `sdt_NN`, `ma_KH`, `ten_ND`, `dia_chi_ND`, `email_ND`, `sdt_ND`, `ship`, `voucher`, `total`, `tongthanhtoan`, `pttt`) VALUES
+(1, 27, 'annashop27-103408-16102023', '', '', 0, '', 'ht01252004@gmail.com', 'tttt', 'ht01252004@gmail.com', '0868412519', 0, 0, 0, 555, 1),
+(2, 28, 'annashop28-103622-16102023', '', '', 0, '', 'lang', 'tttt', 'vietnamtour0@gmail.com', '0868412519', 0, 0, 0, 555, 1),
+(3, 29, 'annashop29-103700-16102023', '', '', 0, '', 'ht01252004@gmail.com', 'tttt', 'ht01252004@gmail.com', '0868412519', 0, 0, 0, 555, 1),
+(4, 30, 'annashop30-103817-16102023', '', '', 0, '', 'khong', 'xfdg', 'thongnhps28514@fpt.edu', '345345', 0, 0, 0, 555, 1),
+(5, 31, 'annashop31-104212-16102023', '', '', 0, '', 'thongnh', 'xfdg', 'admin@gmail.com', '0868412519', 0, 0, 0, 555, 1),
+(6, 32, 'annashop32-105136-16102023', '', '', 0, '', 'thongnh', 'tttt', 'ht01252004@gmail.com', '0868412519', 0, 0, 0, 555, 1),
+(7, 33, 'annashop33-105632-16102023', '', '', 0, '', 'thongnh', 'tttt', 'ht01252004@gmail.com', '0868412519', 0, 0, 0, 555, 1),
+(8, 34, 'annashop34-110401-16102023', '', '', 0, '', 'skt', 'tttt', 'ht01252004@gmail.com', '0868412519', 0, 0, 0, 555, 1),
+(9, 35, 'annashop35-111339-16102023', '', '', 0, '', 'tt', 'tttt', 'ht01252004@gmail.com', '0868412519', 0, 0, 0, 555, 1),
+(10, 36, 'annashop36-111428-16102023', '', '', 0, '', 'ht01252004@gmail.com', 'ghh', 'ht01252004@gmail.com', '0868412519', 0, 0, 0, 555, 1),
+(11, 37, 'annashop37-111553-16102023', '', '', 0, '', 'ht01252004@gmail.com', 'tttt', 'ht01252004@gmail.com', '0868412519', 0, 0, 0, 555, 1),
+(12, 38, 'annashop38-111630-16102023', '', '', 0, '', 'ht01252004@gmail.com', 'tttt', 'ht01252004@gmail.com', '0868412519', 0, 0, 0, 555, 1),
+(13, 39, 'annashop39-111916-16102023', '', '', 0, '', 'ht01252004@gmail.com', 'tttt', 'ht01252004@gmail.com', '0868412519', 0, 0, 0, 555, 1),
+(14, 40, 'annashop40-112120-16102023', '', '', 0, '', 'thongnh', 'tttt', 'ht01252004@gmail.com', '0868412519', 0, 0, 0, 1110, 1),
+(15, 41, 'annashop41-112154-16102023', '', '', 0, '', 'ht01252004@gmail.com', 'tttt', 'ht01252004@gmail.com', '0868412519', 0, 0, 0, 1110, 1),
+(16, 42, 'annashop42-112906-16102023', '', '', 0, '', 'thongnh', 'tttt', 'ht01252004@gmail.com', '0868412519', 0, 0, 0, 1110, 1),
+(17, 43, 'annashop43-113714-16102023', '', '', 0, '', 'ht01252004@gmail.com', 'tttt', 'ht01252004@gmail.com', '0868412519', 0, 0, 0, 900, 1);
 
 -- --------------------------------------------------------
 
@@ -101,7 +136,6 @@ CREATE TABLE `don_hang` (
 
 CREATE TABLE `gio_hang` (
   `id_cart` int(9) NOT NULL,
-  `id_pro` int(6) NOT NULL,
   `so_luong` int(100) NOT NULL,
   `ten` varchar(100) NOT NULL,
   `hinh` varchar(300) NOT NULL,
@@ -174,7 +208,44 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id_user`, `ho_ten`, `sdt`, `email`, `dia_chi`, `hinh`, `password`, `ma_kh`, `vai_tro`, `username`) VALUES
 (1, '', '', 'ht01252004@gmail.com', '', '', '1cc39ffd758234422e1f75beadfc5fb2', '', 0, 'thongnh'),
-(2, '', NULL, 'ht01252004@gmail.com', NULL, '', 'b59c67bf196a4758191e42f76670ceba', '', 0, 'thongnh');
+(2, '', NULL, 'ht01252004@gmail.com', NULL, '', 'b59c67bf196a4758191e42f76670ceba', '', 0, 'thongnh'),
+(3, '', NULL, 'ht01252004@gmail.com', NULL, '', '202cb962ac59075b964b07152d234b70', '', 0, '123'),
+(4, 'Hoàng thông', NULL, 'vietnamtour0@gmail.com', NULL, '', '123', '', 0, 'thongnh'),
+(5, '', '', 'datphan@gmail.com', '', '', '123456', '', 0, 'datphan99'),
+(10, '', NULL, '', NULL, '', 'admin123', '', 1, 'admin123'),
+(11, 'thongnh', '423', 'ht01252004@gmail.com', 'tttt', '', '123456', '', 0, 'guest423'),
+(12, 'thongnh', '111111', 'ht01252004@gmail.com', 'xfdg', '', '123456', '', 0, 'guest856'),
+(13, 'thongnh', '111111', 'ht01252004@gmail.com', 'xfdg', '', '123456', '', 0, 'guest886'),
+(14, 'thongnh', '111111', 'ht01252004@gmail.com', 'xfdg', '', '123456', '', 0, 'guest477'),
+(15, 'thongnh', '0868412519', 'ht01252004@gmail.com', 'tttt', '', '123456', '', 0, 'guest575'),
+(16, 'thongnh', '0868412519', 'ht01252004@gmail.com', 'tttt', '', '123456', '', 0, 'guest851'),
+(17, 'thongnh', '0868412519', 'ht01252004@gmail.com', 'ádws', '', '123456', '', 0, 'guest254'),
+(18, 'thongnh', '0868412519', 'ht01252004@gmail.com', 'tttt', '', '123456', '', 0, 'guest667'),
+(19, 'thongnh', '0868412519', 'ht01252004@gmail.com', 'tttt', '', '123456', '', 0, 'guest706'),
+(20, 'thongnh', '0868412519', 'vietnamtour0@gmail.com', 'xfdg', '', '123456', '', 0, 'guest649'),
+(21, 'thongnh', '0868412519', 'nguyentrongphuc03@gmail.com', 'gfdgfdg', '', '123456', '', 0, 'guest341'),
+(22, 'thongnh', '0868412519', 'thongnhps28514@fpt.edu', 'cc', '', '123456', '', 0, 'guest755'),
+(23, 'ht', '345345', 'vietnamtour0@gmail.com', 'xfdg', '', '123456', '', 0, 'guest76'),
+(24, 'ht01252004@gmail.com', '0868412519', 'vietnamtour0@gmail.com', 'xfdg', '', '123456', '', 0, 'guest91'),
+(25, 'ht01252004@gmail.com', '0868412519', 'ht01252004@gmail.com', 'tttt', '', '123456', '', 0, 'guest858'),
+(26, 'ht01252004@gmail.com', '0868412519', 'ht01252004@gmail.com', 'tttt', '', '123456', '', 0, 'guest939'),
+(27, 'ht01252004@gmail.com', '0868412519', 'ht01252004@gmail.com', 'tttt', '', '123456', '', 0, 'guest426'),
+(28, 'lang', '0868412519', 'vietnamtour0@gmail.com', 'tttt', '', '123456', '', 0, 'guest515'),
+(29, 'ht01252004@gmail.com', '0868412519', 'ht01252004@gmail.com', 'tttt', '', '123456', '', 0, 'guest883'),
+(30, 'khong', '345345', 'thongnhps28514@fpt.edu', 'xfdg', '', '123456', '', 0, 'guest794'),
+(31, 'thongnh', '0868412519', 'admin@gmail.com', 'xfdg', '', '123456', '', 0, 'guest704'),
+(32, 'thongnh', '0868412519', 'ht01252004@gmail.com', 'tttt', '', '123456', '', 0, 'guest984'),
+(33, 'thongnh', '0868412519', 'ht01252004@gmail.com', 'tttt', '', '123456', '', 0, 'guest931'),
+(34, 'skt', '0868412519', 'ht01252004@gmail.com', 'tttt', '', '123456', '', 0, 'guest519'),
+(35, 'tt', '0868412519', 'ht01252004@gmail.com', 'tttt', '', '123456', '', 0, 'guest837'),
+(36, 'ht01252004@gmail.com', '0868412519', 'ht01252004@gmail.com', 'ghh', '', '123456', '', 0, 'guest272'),
+(37, 'ht01252004@gmail.com', '0868412519', 'ht01252004@gmail.com', 'tttt', '', '123456', '', 0, 'guest506'),
+(38, 'ht01252004@gmail.com', '0868412519', 'ht01252004@gmail.com', 'tttt', '', '123456', '', 0, 'guest642'),
+(39, 'ht01252004@gmail.com', '0868412519', 'ht01252004@gmail.com', 'tttt', '', '123456', '', 0, 'guest218'),
+(40, 'thongnh', '0868412519', 'ht01252004@gmail.com', 'tttt', '', '123456', '', 0, 'guest922'),
+(41, 'ht01252004@gmail.com', '0868412519', 'ht01252004@gmail.com', 'tttt', '', '123456', '', 0, 'guest583'),
+(42, 'thongnh', '0868412519', 'ht01252004@gmail.com', 'tttt', '', '123456', '', 0, 'guest350'),
+(43, 'ht01252004@gmail.com', '0868412519', 'ht01252004@gmail.com', 'tttt', '', '123456', '', 0, 'guest395');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -238,7 +309,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT cho bảng `binh_luan`
 --
 ALTER TABLE `binh_luan`
-  MODIFY `id_cmt` int(9) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_cmt` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT cho bảng `brand`
@@ -256,13 +327,13 @@ ALTER TABLE `danhmuc`
 -- AUTO_INCREMENT cho bảng `don_hang`
 --
 ALTER TABLE `don_hang`
-  MODIFY `id_don_hang` int(9) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_don_hang` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT cho bảng `gio_hang`
 --
 ALTER TABLE `gio_hang`
-  MODIFY `id_cart` int(9) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_cart` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT cho bảng `san_pham`
@@ -274,7 +345,7 @@ ALTER TABLE `san_pham`
 -- AUTO_INCREMENT cho bảng `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_user` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- Các ràng buộc cho các bảng đã đổ

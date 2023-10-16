@@ -5,7 +5,8 @@
         $_SESSION["giohang"]=[];
     }
 include "Dao/pdo.php";
-include "Dao/sanpham.php";
+include "Dao/sanpham.php";  
+include "Dao/donhang.php";
 include "Dao/giohang.php";
 include "Dao/danhmuc.php";
 include "Dao/user.php";
@@ -14,7 +15,7 @@ $product_new = get_product_new(8);
 $product_sale = get_product_sale(4);
 $product_view = get_product_view(4);
 if (!isset($_GET['pg'])) {
-    include "View/home.php";
+    include "View/home.php";                                                
 }
 else {
     switch ($_GET['pg']) {
@@ -56,7 +57,8 @@ else {
                 $hinh = $_POST['hinh'];
                 $soluong = $_POST['soluong'];
                 $gia = $_POST['gia'];
-                $sp = ["id_sp" => $id_sp, "ten" => $ten, "hinh" => $hinh, "soluong" => $soluong, "gia" => $gia];
+                $tong_tien = (Int)$soluong * (Int)$gia;
+                $sp = ["id_sp" => $id_sp, "ten" => $ten, "hinh" => $hinh, "soluong" => $soluong, "gia" => $gia, "tong_tien" => $tong_tien];
                 array_push($_SESSION["giohang"],$sp);
 
                 header('location: index.php?pg=giohang');
@@ -142,6 +144,12 @@ else {
             if (is_array($kq) && (count($kq))) {
                 $_SESSION['s_user']=$kq;
                 header('location:index.php');
+                if ($_SESSION['trang']=="sanphamchitiet") {
+                    header('location:index.php?pg=sanphamchitiet&idpro='.$_SESSION['id_sp'].'#binhluan');
+                }else{
+                    header('location:index');
+
+                }
             } else {
                 $tb='Tài khoản không tồn tại hoặc thông tin đăng nhập sai';
                 $_SESSION['tb_dangnhap']=$tb;   
@@ -154,6 +162,47 @@ else {
             if (isset($_SESSION['s_user']) && (count($_SESSION['s_user'])>0)){
                 include "View/account.php";
             }
+            break;
+        case 'donhang':
+            if (isset($_POST['dathang'])) {
+                $ten_ND = $_POST['username'];
+                $sdt_ND = $_POST['sdt'];
+                $dia_chi_ND = $_POST['diachi'];
+                $email_ND = $_POST['email'];
+                $ten_NN = $_POST['username_NN'];
+                $dia_chi_NN = $_POST['diachi_NN'];
+                $sdt_NN = $_POST['sdt_NN'];
+                $pttt =$_POST['pttt'];
+                // insert user new
+                $username="guest".rand(1,999);
+                $password="123456";
+                $id_user = user_insert_id($password, $ten_ND, $username, $sdt_ND, $dia_chi_ND, $email_ND);
+                //tao don hang
+                $ma_donhang="annashop".$id_user."-".date("His-dmY");
+                $total = get_tongdonhang();
+                $ship = 0;
+                if (isset($_SESSION['mavoucher'])) {
+                    $voucher = $_SESSION['mavoucher'];
+                }else{
+                    $voucher =0;
+                }
+                $tongthanhtoan =($total -$voucher) +$ship;
+                // $tongdonhang =$total +$ship;
+                $id_don_hang=bill_insert_id($ma_donhang,$id_user,$ten_NN,$dia_chi_NN,$sdt_NN,$ten_ND,$dia_chi_ND,$email_ND,$sdt_ND,$ship,$voucher,$tongthanhtoan,$pttt);
+                // insert giỏ hàng từ session vào tbale cart 
+                foreach ($_SESSION["giohang"] as $sp) {
+                    extract($sp);
+                   $cart_insert = cart_insert($id_sp,$soluong,$ten,$hinh,$gia,$tong_tien,$id_don_hang);
+                   var_dump($cart_insert);
+                }
+                $_SESSION['giohang'] = null;
+                // chuyen trang thanh cong
+            }
+            include "View/donhang.php";
+            break;
+        case 'donhang_confirm':
+       
+           include "View/donhang_cofirm.php";
             break;
         case 'gioithieu':
            include "View/gioithieu.php";

@@ -3,8 +3,6 @@ $html_dsdm = show_dm($dsdm);
 extract($spchitiet);
 $html_product_lienquan = show_product($splienquan);
 ?>
-
-
 <div class="header_title container-fluid bg-dark">
     <div class="header_title-content container py-3">
         <div class="header_title-text d-flex justify-content-center align-item-center fz-1 text-white fw-200">SEE BETTER
@@ -130,7 +128,14 @@ $html_product_lienquan = show_product($splienquan);
         <div class="section-detail-third-right"> <img src="./View/layout/images/img-pr-2.png" alt=""></div>
     </div>
 </section>
-<section>
+<div id="binhluan" class="container">
+    <iframe src="View/binhluan.php?id_sp=<?=$id_sp?>" height="600px" width="100%"
+        sandbox="allow-top-navigation allow-scripts allow-forms allow-same-origin" scrolling="no"
+        style="overflow: hidden" frameborder="0" style="overflow:hidden; width: 100%"></iframe>
+
+
+</div>
+<!-- <section>
     <div class="container py-5">
         <div class="row">
             <div class="col-md-12">
@@ -176,7 +181,7 @@ $html_product_lienquan = show_product($splienquan);
             </div>
         </div>
     </div>
-</section>
+</section> -->
 <section class="section-product-hot container py-3">
     <div class="section-product-hot-title">
         <h3 class="section-product-hot-title-content text-dark fw-600">SẢN PHẨM LIÊN QUAN</h3>

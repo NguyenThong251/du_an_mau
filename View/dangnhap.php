@@ -39,7 +39,7 @@
                     <div class="col-md-12 pt-3">
                         <label class="form-label fz-12 pb-2" for="password">Mật khẩu</label>
                         <div class="input-pass d-flex align-items-center border bg-white rounded">
-                            <input class="form-control border-0" type="text" name="password" id="password" required
+                            <input class="form-control border-0" type="password" name="password" id="password" required
                                 placeholder="Nhập tài khoản">
                             <ion-icon class="fz-12 px-3 pointer" name="eye-outline"></ion-icon>
                         </div>

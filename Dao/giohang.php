@@ -1,4 +1,11 @@
 <?php 
+//insert giohang 
+function cart_insert($id_sp,$soluong,$ten,$hinh,$gia,$tong_tien,$id_don_hang)
+{
+    $sql = "INSERT INTO gio_hang(id_sp,so_luong,ten,hinh,gia,tong_tien,id_don_hang) VALUES (?,?,?,?,?,?,?)";
+   return pdo_execute_id($sql,$id_sp,$soluong,$ten,$hinh,$gia,$tong_tien,$id_don_hang);
+}
+
 function view_cart(){
     $html_cart = '';
     foreach ($_SESSION["giohang"] as $sp) {

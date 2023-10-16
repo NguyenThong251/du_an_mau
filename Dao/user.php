@@ -1,11 +1,16 @@
 <?php
-// require_once 'pdo.php';
+require_once 'pdo.php';
 
 
 function user_insert($username, $password, $email)
 {
     $sql = "INSERT INTO user(username,password,email) VALUES (?, ?, ?)";
     pdo_execute($sql, $username, $password, $email);
+}
+function user_insert_id($password, $ten_ND, $username, $sdt_ND, $dia_chi_ND, $email_ND)
+{
+    $sql = "INSERT INTO user(password, ho_ten, username, sdt, dia_chi, email) VALUES (?, ?, ?, ?, ?, ?)";
+    return pdo_execute_id($sql,$password, $ten_ND, $username, $sdt_ND, $dia_chi_ND, $email_ND);
 }
 
 //lấy về id mới nhất sau khi insert
@@ -36,6 +41,7 @@ function get_user($id)
     $sql = "SELECT * FROM user WHERE id_user=?";
     return  pdo_query_one($sql, $id);
 }
+
 
 
 
