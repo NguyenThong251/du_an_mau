@@ -1,7 +1,7 @@
 <?php 
 session_start();
-include("../Dao/user.php");
 include("../Dao/pdo.php");
+include("../Dao/user.php");
 if (isset($_POST["login"])) {
     $username = $_POST["username"];
     $password = $_POST["password"];

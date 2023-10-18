@@ -110,6 +110,37 @@ function get_sp_by_id($id_sp){
     return pdo_query_one($sql, $id_sp);
 }
 
+function add_sanpham($hinh, $id_danhmuc, $ten_sp, $gia, $giam_gia, $sale, $new, $so_luot_xem, $mo_ta) {
+    $sql = "INSERT INTO san_pham (hinh, id_danhmuc, ten_sp, gia, giam_gia, sale, new, so_luot_xem, mo_ta) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    pdo_execute($sql, $hinh, $id_danhmuc, $ten_sp, $gia, $giam_gia, $sale, $new, $so_luot_xem, $mo_ta);
+}
+// function update_sanpham($hinh, $id_danhmuc, $ten_sp, $gia, $giam_gia, $sale, $new, $so_luot_xem, $mo_ta) {
+//     if ($hinh != "") {
+//         $sql = "INSERT INTO san_pham (hinh, id_danhmuc, ten_sp, gia, giam_gia, sale, new, so_luot_xem, mo_ta) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+//     }
+//     $sql = "INSERT INTO san_pham (hinh, id_danhmuc, ten_sp, gia, giam_gia, sale, new, so_luot_xem, mo_ta) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+//     pdo_execute($sql, $hinh, $id_danhmuc, $ten_sp, $gia, $giam_gia, $sale, $new, $so_luot_xem, $mo_ta);
+// }
+
+function update_sanpham($hinh, $id_danhmuc, $ten_sp, $gia, $giam_gia, $sale, $new, $so_luot_xem, $mo_ta, $id_sp) {
+    $sql = "UPDATE san_pham SET hinh = ?, id_danhmuc = ?, ten_sp = ?, gia = ?, giam_gia = ?, sale = ?, new = ?, so_luot_xem = ?, mo_ta = ? WHERE id_sp = ?";
+    $conn = pdo_get_connection();
+    $stmt = $conn->prepare($sql);
+    $stmt->execute([$hinh, $id_danhmuc, $ten_sp, $gia, $giam_gia, $sale, $new, $so_luot_xem, $mo_ta, $id_sp]);
+}
+
+function delete_sanpham($id_sp){
+    $sql = "DELETE FROM san_pham WHERE id_sp=?";
+    pdo_execute($sql, $id_sp);
+    $tb="Xóa thành công";
+    return $tb;
+}
+function get_ten_file_hinh($id_sp){
+    $sql = "SELECT hinh FROM san_pham WHERE id_sp=".$id_sp;
+    $ten_file_hinh=pdo_query_one($sql);
+    extract($ten_file_hinh);
+   return $hinh;
+};
 // function hang_hoa_exist($ma_hh){
 //     $sql = "SELECT count(*) FROM hang_hoa WHERE ma_hh=?";
 //     return pdo_query_value($sql, $ma_hh) > 0;

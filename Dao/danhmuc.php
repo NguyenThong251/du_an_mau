@@ -50,6 +50,58 @@ function get_name_dm($id_danhmuc){
     $kq = pdo_query_one($sql, $id_danhmuc);
     return $kq["ten"];
 }
+function get_danhmuc_id($id_dm) {
+    $sql = "SELECT * FROM danhmuc WHERE id_danhmuc = ?";
+    return pdo_query_one($sql, $id_dm);
+}
+function set_danhmuc($id_dm, $ten, $mo_ta){
+    $sql = "UPDATE danhmuc SET ten = ?, mo_ta = ? WHERE id_danhmuc = ?";
+    $conn = pdo_get_connection();
+    $stmt = $conn->prepare($sql);
+    $stmt->execute([$ten, $mo_ta, $id_dm]);
+}
+//delete
+// function detele_catalog($id){
+//     $sql = "DELETE FROM danhmuc WHERE id_danhmuc=".$id;
+//   $dssp =get_product_all($id);
+//   if(count($dssp)>0){
+//     $tb = "Danh mục nay hiện có ".count($dssp)." sản phẩm bạn không được phép xóa!";
+//   } else {
+//     $conn = pdo_get_connection();
+//     $conn->exec($sql);
+//     $tb = "Xóa thành công ";
+//   }
+//     return $tb;
+//   } 
+function delete_catalog($id) {
+    $conn = pdo_get_connection();
+    $dssp = get_products_by_catalog($id);
+    
+    if (count($dssp) > 0) {
+        return "Danh mục này hiện có " . count($dssp) . " sản phẩm và không thể xóa.";
+    }
+
+    $sql = "DELETE FROM danhmuc WHERE id_danhmuc = ?";
+    $stmt = $conn->prepare($sql);
+    
+    if ($stmt->execute([$id])) {
+        return "Xóa thành công";
+    } else {
+        return "Xóa thất bại";
+    }
+}
+
+function get_products_by_catalog($id) {
+    $sql = "SELECT * FROM san_pham WHERE id_danhmuc = ?";
+    return pdo_query($sql, $id);
+}
+function add_catalog($ten,$mota){
+ $sql = "INSERT INTO danhmuc (ten, mo_ta) VALUES (?, ?)";
+ pdo_execute ($sql,$ten,$mota);
+};
+
+
+
 // function get_name_dm(){
 //     $sql = "SELECT ten FROM danhmuc ";
 //     return pdo_query($sql);

@@ -147,7 +147,7 @@ else {
                 if ($_SESSION['trang']=="sanphamchitiet") {
                     header('location:index.php?pg=sanphamchitiet&idpro='.$_SESSION['id_sp'].'#binhluan');
                 }else{
-                    header('location:index');
+                    header('location:index.php');
 
                 }
             } else {
