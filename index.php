@@ -50,21 +50,71 @@ else {
                 include "View/home.php";
             }
             break;
-        case 'addcart':
-            if (isset($_POST['addcart'])) {
-                $ten = $_POST['ten'];
-                $id_sp = $_POST['id_sp'];
-                $hinh = $_POST['hinh'];
-                $soluong = $_POST['soluong'];
-                $gia = $_POST['gia'];
-                $tong_tien = (Int)$soluong * (Int)$gia;
-                $sp = ["id_sp" => $id_sp, "ten" => $ten, "hinh" => $hinh, "soluong" => $soluong, "gia" => $gia, "tong_tien" => $tong_tien];
-                array_push($_SESSION["giohang"],$sp);
-
-                header('location: index.php?pg=giohang');
-            }
-            break;
+            case 'addcart':
+                if (isset($_POST['addcart'])) {
+                    $ten = $_POST['ten'];
+                    $id_sp = $_POST['id_sp'];
+                    $hinh = $_POST['hinh'];
+                    $soluong = $_POST['soluong'];
+                    $gia = $_POST['gia'];
+                    $tong_tien = (int)$soluong * (int)$gia;
+                    
+                    // Kiểm tra xem sản phẩm đã tồn tại trong giỏ hàng chưa
+                    $product_exists = false;
+                    
+                    foreach ($_SESSION["giohang"] as &$sp) {
+                        if ($sp['id_sp'] == $id_sp) {
+                            // Sản phẩm đã tồn tại, cộng số lượng và cập nhật tổng tiền
+                            $sp['soluong'] += $soluong;
+                            $sp['tong_tien'] += $tong_tien;
+                            $product_exists = true;
+                            break;
+                        }
+                    }
+                    
+                    // Nếu sản phẩm không tồn tại trong giỏ hàng, thêm sản phẩm mới vào giỏ hàng
+                    if (!$product_exists) {
+                        $sp = ["id_sp" => $id_sp, "ten" => $ten, "hinh" => $hinh, "soluong" => $soluong, "gia" => $gia, "tong_tien" => $tong_tien];
+                        $_SESSION["giohang"][] = $sp;
+                    }
+                    
+                    header('location: index.php?pg=giohang');
+                }
+                break;
+            
         case 'giohang':
+            // Tăng số lượng của sản phẩm trùng lặp
+            if (isset($_GET['add-sl'])) {
+                $add_sl = $_GET['add-sl'];
+                if (!empty($add_sl)) {
+                    foreach ($_SESSION['giohang'] as $key => $value) {
+                        if ($value['id_sp'] == $add_sl) {
+                            $_SESSION['giohang'][$key]['soluong'] += 1;
+                            header('Location: index.php?pg=giohang');
+                        }
+                    }
+                }
+            }
+            // giảm số lượng
+            if (isset($_GET['del-sl'])){
+                foreach ($_SESSION['giohang'] as $key => $value) {
+                  if ($value['id_sp'] == $_GET['del-sl']) {
+                    if ($value['soluong'] > 1) {
+                      $_SESSION['giohang'][$key]['soluong'] -= 1;
+                    } else {
+                        unset($_SESSION["giohang"]);
+
+                    }
+                    header('Location: index.php?pg=giohang');
+                  }
+                }
+              }
+              // gio hang trống 
+              if (empty($_SESSION['giohang'])) {
+                $tb_giohangtrong ="<img class='img-cover' src='./View/layout/images/cartety.jpg' alt=''>";
+               
+            }
+      // xóa tất cả
             if(isset($_GET['delAll'])&&($_GET['delAll'])==1) {
                 unset($_SESSION["giohang"]);
                 header('location: index.php?pg=giohang');
@@ -164,6 +214,46 @@ else {
             }
             break;
         case 'donhang':
+            // if (isset($_POST['dathang'])) {
+            //     $ten_ND = $_POST['username'];
+            //     $sdt_ND = $_POST['sdt'];
+            //     $dia_chi_ND = $_POST['diachi'];
+            //     $email_ND = $_POST['email'];
+            //     $ten_NN = $_POST['username_NN'];
+            //     $dia_chi_NN = $_POST['diachi_NN'];
+            //     $sdt_NN = $_POST['sdt_NN'];
+            //     $pttt =$_POST['pttt'];
+            //     // insert user new
+            //     $username="guest".rand(1,999);
+            //     $password="123456";
+            //     $id_user = user_insert_id($password, $ten_ND, $username, $sdt_ND, $dia_chi_ND, $email_ND);
+            //     //tao don hang
+            //     $ma_donhang="annashop".$id_user."-".date("His-dmY");
+            //     $total = get_tongdonhang();
+            //     $ship = 0;
+            //     if (isset($_SESSION['mavoucher'])) {
+            //         $voucher = $_SESSION['mavoucher'];
+            //     }else{
+            //         $voucher =0;
+            //     }
+            //     $tongthanhtoan =($total -$voucher) +$ship;
+            //     // $tongdonhang =$total +$ship;
+            //     $id_don_hang=bill_insert_id($ma_donhang,$id_user,$ten_NN,$dia_chi_NN,$sdt_NN,$ten_ND,$dia_chi_ND,$email_ND,$sdt_ND,$ship,$voucher,$tongthanhtoan,$pttt);
+            //     // var_dump($id_don_hang);
+            //     // insert giỏ hàng từ session vào tbale cart 
+            //         foreach ($_SESSION["giohang"] as $sp) {
+            //             extract($sp);
+            //            $cart_insert = cart_insert($id_sp,$soluong,$ten,$hinh,$gia,$tong_tien,$id_don_hang);
+            //            var_dump($cart_insert);
+            //         }
+            //         $_SESSION['giohang'] = Null;
+            //         // $_SESSION['giohang'] = [];
+            //     // chuyen trang thanh cong
+            // }
+            
+            include "View/donhang.php";
+            break;
+        case 'donhang_confirm':
             if (isset($_POST['dathang'])) {
                 $ten_ND = $_POST['username'];
                 $sdt_ND = $_POST['sdt'];
@@ -189,21 +279,33 @@ else {
                 $tongthanhtoan =($total -$voucher) +$ship;
                 // $tongdonhang =$total +$ship;
                 $id_don_hang=bill_insert_id($ma_donhang,$id_user,$ten_NN,$dia_chi_NN,$sdt_NN,$ten_ND,$dia_chi_ND,$email_ND,$sdt_ND,$ship,$voucher,$tongthanhtoan,$pttt);
+                // var_dump($id_don_hang);
                 // insert giỏ hàng từ session vào tbale cart 
-                foreach ($_SESSION["giohang"] as $sp) {
-                    extract($sp);
-                   $cart_insert = cart_insert($id_sp,$soluong,$ten,$hinh,$gia,$tong_tien,$id_don_hang);
-                   var_dump($cart_insert);
-                }
-                $_SESSION['giohang'] = null;
+                    foreach ($_SESSION["giohang"] as $sp) {
+                        extract($sp);
+                       $cart_insert = cart_insert($id_sp,$soluong,$ten,$hinh,$gia,$tong_tien,$id_don_hang);
+                    //    var_dump($cart_insert);
+                    }
+                    // $_SESSION['giohang'];
+                    $_SESSION['giohang'] = Null;
+                    // if (isset($_SESSION["giohang"])) {
+                    //     unset($_SESSION["giohang"]);
+                    // }
+                    // unset($_SESSION['giohang'] );
+                    // $_SESSION['giohang'] = [];
                 // chuyen trang thanh cong
             }
-            include "View/donhang.php";
-            break;
-        case 'donhang_confirm':
-       
            include "View/donhang_cofirm.php";
             break;
+            case 'order':
+                // Xóa nội dung giỏ hàng từ phiên làm việc
+                unset($_SESSION['giohang']);
+                
+                // Chuyển hướng người dùng về trang chủ
+                header('Location: index.php');
+                exit; // Kết thúc quá trình xử lý
+                break;
+            
         case 'gioithieu':
            include "View/gioithieu.php";
             break;

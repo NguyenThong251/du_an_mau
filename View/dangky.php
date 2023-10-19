@@ -47,7 +47,7 @@
                         <div class="input-pass d-flex align-items-center border bg-white rounded">
                             <input class="form-control border-0" type="password" name="password" id="password" required
                                 placeholder="Nhập  mật khẩu">
-                            <ion-icon class="fz-12 px-3 pointer" name="eye-outline"></ion-icon>
+                            <ion-icon class="fz-12 px-3 pointer" id="eye-icon" name="eye-outline"></ion-icon>
                         </div>
                     </div>
                     <div class="col-md-12 pt-3">
@@ -55,7 +55,7 @@
                         <div class="input-pass d-flex align-items-center border bg-white rounded">
                             <input class="form-control border-0" type="password" name="" id="re-password" required
                                 placeholder="Nhập lại mật khẩu">
-                            <ion-icon class="fz-12 px-3 pointer" name="eye-outline"></ion-icon>
+                            <ion-icon class="fz-12 px-3 pointer" id="eye-icon2" name="eye-outline"></ion-icon>
                         </div>
                     </div>
                     <div class="form-check d-flex align-items-center fz-1 text-dark gap-2 py-3">
@@ -76,3 +76,48 @@
         </div>
     </div>
 </section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Lấy các phần tử và biến cần thiết
+
+    var passwordInput = document.getElementById('password');
+    var confirmPasswordInput = document.getElementById('re-password');
+    var eyeIcon1 = document.getElementById('eye-icon');
+    var eyeIcon2 = document.getElementById('eye-icon2');
+
+    // Bắt sự kiện khi người dùng nhấn vào biểu tượng mắt 1
+    eyeIcon1.addEventListener('click', function() {
+        if (passwordInput.type === 'password') {
+            passwordInput.type = 'text';
+            eyeIcon1.setAttribute('name', 'eye-off-outline'); // Thay đổi giá trị của thuộc tính name
+        } else {
+            passwordInput.type = 'password';
+            eyeIcon1.setAttribute('name', 'eye-outline');
+        }
+    });
+
+    // Bắt sự kiện khi người dùng nhấn vào biểu tượng mắt 2
+    eyeIcon2.addEventListener('click', function() {
+        if (confirmPasswordInput.type === 'password') {
+            confirmPasswordInput.type = 'text';
+            eyeIcon2.setAttribute('name', 'eye-off-outline');
+        } else {
+            confirmPasswordInput.type = 'password';
+            eyeIcon2.setAttribute('name', 'eye-outline');
+        }
+    });
+
+    // Bắt sự kiện khi người dùng gửi form
+    var form = document.querySelector('form');
+    form.addEventListener('submit', function(e) {
+        var password = passwordInput.value;
+        var confirmPassword = confirmPasswordInput.value;
+
+        if (password !== confirmPassword) {
+            e.preventDefault(); // Ngăn chặn gửi form
+            alert('Mật khẩu không khớp. Vui lòng nhập lại.');
+        }
+    });
+});
+</script>

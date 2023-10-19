@@ -29,7 +29,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&amp;display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="./View/layout/assets/css/app.css">
+
     <title>index</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- <link rel="stylesheet" href="./View/layout/assets/js/jquery.js"> -->
 </head>
 
 <body>
@@ -53,10 +56,14 @@
                             <ul class="dropdown-menu">
                                 <li class="list-style-none"><a class="dropdown-item" href="index.php?pg=sanpham">Gọng
                                         kính </a></li>
-                                <li class="list-style-none"><a class="dropdown-item" href="#">Kính áp tròng</a></li>
-                                <li class="list-style-none"><a class="dropdown-item" href="#">Gọng kính trẻ em </a></li>
-                                <li class="list-style-none"><a class="dropdown-item" href="#">Tròng kính </a></li>
-                                <li class="list-style-none"><a class="dropdown-item" href="#">Kính râm </a></li>
+                                <li class="list-style-none"><a class="dropdown-item" href="index.php?pg=sanpham">Kính áp
+                                        tròng</a></li>
+                                <li class="list-style-none"><a class="dropdown-item" href="index.php?pg=sanpham">Gọng
+                                        kính trẻ em </a></li>
+                                <li class="list-style-none"><a class="dropdown-item" href="index.php?pg=sanpham">Tròng
+                                        kính </a></li>
+                                <li class="list-style-none"><a class="dropdown-item" href="index.php?pg=sanpham">Kính
+                                        râm </a></li>
                             </ul>
                         </li>
                         <li class="nav-item list-style-none"><a class="nav-link fz-08 text-dark fw-600" href="#">STORE
@@ -76,7 +83,10 @@
                                 value="Tìm kiếm">
                         </form>
                         <!-- <ion-icon class="text-dark fz-16 header-icon_item" name="search-outline"></ion-icon> -->
-                        <ion-icon class="text-dark fz-16 header-icon_item" name="cart-outline"></ion-icon>
+                        <a href="index.php?pg=giohang" id="boxcart" class="header-icon_item position-relative boxcart">
+                            <ion-icon class="text-dark fz-16 " name="cart-outline"></ion-icon>
+                            <span class="sl-sp position-absolute text-dark fz-08"></span>
+                        </a>
                         <?=$html_account?>
                         <!-- <a href="index.php?pg=dangnhap">
                             <ion-icon class="text-dark fz-16 header-icon_item" name="person-circle-outline"></ion-icon>

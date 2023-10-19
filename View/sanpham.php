@@ -1,4 +1,15 @@
 <?php 
+
+
+//product_new
+$html_product_new = show_product($product_new);
+//product_sale
+$html_product_sale=show_product($product_sale);
+//product_view
+$html_product_view=show_product($product_view);
+
+
+
 if ($title_page!="") $title = $title_page; 
 else $title = "Sản phẩm";
 
@@ -69,131 +80,7 @@ $html_product_list = show_product($dssp);
         <h3 class="section-product-hot-title-content text-dark fw-600">SẢN PHẨM NỔI BẬT</h3>
     </div>
     <div class="section-product-hot row py-3 row-cols-5">
-        <div class="section-product-item col py-3"><a class="unlink" href="#">
-                <div class="card border-white rounded-3 position-relative"><img class="card-img-top img-fluid"
-                        src="./View/layout/images/product-1.jpg" alt="alt" />
-                    <div class="card-body d-flex flex-column gap-2">
-                        <h3 class="fz-1 text-dark fw-600 mb-0">GK - CK87</h3>
-                        <div class="card-price d-flex gap-2">
-                            <del class="card-price-old text-dark-80 fz-08">380.000</del>
-                            <del class="text-dark-80 fz-08">đ</del>
-                            <div class="card-price-new text-dark fz-08">280.000</div><span
-                                class="text-dark fz-08">đ</span>
-                        </div>
-                        <div class="card-view d-flex gap-2">
-                            <ion-icon class="card-view-icon text-dark fz-08" name="eye-outline"></ion-icon>
-                            <div class="card-view-text fz-08 text-dark">40000</div><span
-                                class="text-dark fz-08">view</span>
-                        </div>
-                    </div><a class="d-flex justify-content-end" href="#">
-                        <button class="btn-cart p-2 bg-primary border-raac">
-                            <ion-icon class="text-white fz-1" name="cart"></ion-icon>
-                        </button></a>
-                    <div class="sticker-sale position-absolute top-0 start-0 px-3 py-2 border-raac bg-danger fw-500">
-                        <span>SALE </span>
-                    </div>
-                </div>
-            </a></div>
-        <div class="section-product-item col py-3"><a class="unlink" href="#">
-                <div class="card border-white rounded-3 position-relative"><img class="card-img-top img-fluid"
-                        src="./View/layout/images/product-1.jpg" alt="alt" />
-                    <div class="card-body d-flex flex-column gap-2">
-                        <h3 class="fz-1 text-dark fw-600 mb-0">GK - CK87</h3>
-                        <div class="card-price d-flex gap-2">
-                            <del class="card-price-old text-dark-80 fz-08">380.000</del>
-                            <del class="text-dark-80 fz-08">đ</del>
-                            <div class="card-price-new text-dark fz-08">280.000</div><span
-                                class="text-dark fz-08">đ</span>
-                        </div>
-                        <div class="card-view d-flex gap-2">
-                            <ion-icon class="card-view-icon text-dark fz-08" name="eye-outline"></ion-icon>
-                            <div class="card-view-text fz-08 text-dark">40000</div><span
-                                class="text-dark fz-08">view</span>
-                        </div>
-                    </div><a class="d-flex justify-content-end" href="#">
-                        <button class="btn-cart p-2 bg-primary border-raac">
-                            <ion-icon class="text-white fz-1" name="cart"></ion-icon>
-                        </button></a>
-                    <div class="sticker-sale position-absolute top-0 start-0 px-3 py-2 border-raac bg-danger fw-500">
-                        <span>SALE </span>
-                    </div>
-                </div>
-            </a></div>
-        <div class="section-product-item col py-3"><a class="unlink" href="#">
-                <div class="card border-white rounded-3 position-relative"><img class="card-img-top img-fluid"
-                        src="./View/layout/images/product-1.jpg" alt="alt" />
-                    <div class="card-body d-flex flex-column gap-2">
-                        <h3 class="fz-1 text-dark fw-600 mb-0">GK - CK87</h3>
-                        <div class="card-price d-flex gap-2">
-                            <del class="card-price-old text-dark-80 fz-08">380.000</del>
-                            <del class="text-dark-80 fz-08">đ</del>
-                            <div class="card-price-new text-dark fz-08">280.000</div><span
-                                class="text-dark fz-08">đ</span>
-                        </div>
-                        <div class="card-view d-flex gap-2">
-                            <ion-icon class="card-view-icon text-dark fz-08" name="eye-outline"></ion-icon>
-                            <div class="card-view-text fz-08 text-dark">40000</div><span
-                                class="text-dark fz-08">view</span>
-                        </div>
-                    </div><a class="d-flex justify-content-end" href="#">
-                        <button class="btn-cart p-2 bg-primary border-raac">
-                            <ion-icon class="text-white fz-1" name="cart"></ion-icon>
-                        </button></a>
-                    <div class="sticker-sale position-absolute top-0 start-0 px-3 py-2 border-raac bg-danger fw-500">
-                        <span>SALE </span>
-                    </div>
-                </div>
-            </a></div>
-        <div class="section-product-item col py-3"><a class="unlink" href="#">
-                <div class="card border-white rounded-3 position-relative"><img class="card-img-top img-fluid"
-                        src="./View/layout/images/product-1.jpg" alt="alt" />
-                    <div class="card-body d-flex flex-column gap-2">
-                        <h3 class="fz-1 text-dark fw-600 mb-0">GK - CK87</h3>
-                        <div class="card-price d-flex gap-2">
-                            <del class="card-price-old text-dark-80 fz-08">380.000</del>
-                            <del class="text-dark-80 fz-08">đ</del>
-                            <div class="card-price-new text-dark fz-08">280.000</div><span
-                                class="text-dark fz-08">đ</span>
-                        </div>
-                        <div class="card-view d-flex gap-2">
-                            <ion-icon class="card-view-icon text-dark fz-08" name="eye-outline"></ion-icon>
-                            <div class="card-view-text fz-08 text-dark">40000</div><span
-                                class="text-dark fz-08">view</span>
-                        </div>
-                    </div><a class="d-flex justify-content-end" href="#">
-                        <button class="btn-cart p-2 bg-primary border-raac">
-                            <ion-icon class="text-white fz-1" name="cart"></ion-icon>
-                        </button></a>
-                    <div class="sticker-sale position-absolute top-0 start-0 px-3 py-2 border-raac bg-danger fw-500">
-                        <span>SALE </span>
-                    </div>
-                </div>
-            </a></div>
-        <div class="section-product-item col py-3"><a class="unlink" href="#">
-                <div class="card border-white rounded-3 position-relative"><img class="card-img-top img-fluid"
-                        src="./View/layout/images/product-1.jpg" alt="alt" />
-                    <div class="card-body d-flex flex-column gap-2">
-                        <h3 class="fz-1 text-dark fw-600 mb-0">GK - CK87</h3>
-                        <div class="card-price d-flex gap-2">
-                            <del class="card-price-old text-dark-80 fz-08">380.000</del>
-                            <del class="text-dark-80 fz-08">đ</del>
-                            <div class="card-price-new text-dark fz-08">280.000</div><span
-                                class="text-dark fz-08">đ</span>
-                        </div>
-                        <div class="card-view d-flex gap-2">
-                            <ion-icon class="card-view-icon text-dark fz-08" name="eye-outline"></ion-icon>
-                            <div class="card-view-text fz-08 text-dark">40000</div><span
-                                class="text-dark fz-08">view</span>
-                        </div>
-                    </div><a class="d-flex justify-content-end" href="#">
-                        <button class="btn-cart p-2 bg-primary border-raac">
-                            <ion-icon class="text-white fz-1" name="cart"></ion-icon>
-                        </button></a>
-                    <div class="sticker-sale position-absolute top-0 start-0 px-3 py-2 border-raac bg-danger fw-500">
-                        <span>SALE </span>
-                    </div>
-                </div>
-            </a></div>
+        <?=$html_product_view?>
     </div>
 </section>
 <section class="section-product-new container py-3">
@@ -203,80 +90,9 @@ $html_product_list = show_product($dssp);
     <div class="section-product-new row py-3">
         <div class="col-4 section-product-new-img"><img class="img-cover rounded-10"
                 src="./View/layout/images/img-pr.jpg" alt="alt"></div>
-        <div class="section-product-item col py-3"><a class="unlink" href="#">
-                <div class="card border-white rounded-3 position-relative"><img class="card-img-top img-fluid"
-                        src="./View/layout/images/product-1.jpg" alt="alt" />
-                    <div class="card-body d-flex flex-column gap-2">
-                        <h3 class="fz-1 text-dark fw-600 mb-0">GK - CK87</h3>
-                        <div class="card-price d-flex gap-2">
-                            <del class="card-price-old text-dark-80 fz-08">380.000</del>
-                            <del class="text-dark-80 fz-08">đ</del>
-                            <div class="card-price-new text-dark fz-08">280.000</div><span
-                                class="text-dark fz-08">đ</span>
-                        </div>
-                        <div class="card-view d-flex gap-2">
-                            <ion-icon class="card-view-icon text-dark fz-08" name="eye-outline"></ion-icon>
-                            <div class="card-view-text fz-08 text-dark">40000</div><span
-                                class="text-dark fz-08">view</span>
-                        </div>
-                    </div><a class="d-flex justify-content-end" href="#">
-                        <button class="btn-cart p-2 bg-primary border-raac">
-                            <ion-icon class="text-white fz-1" name="cart"></ion-icon>
-                        </button></a>
-                    <div class="sticker-sale position-absolute top-0 start-0 px-3 py-2 border-raac bg-danger fw-500">
-                        <span>SALE </span>
-                    </div>
-                </div>
-            </a></div>
-        <div class="section-product-item col py-3"><a class="unlink" href="#">
-                <div class="card border-white rounded-3 position-relative"><img class="card-img-top img-fluid"
-                        src="./View/layout/images/product-1.jpg" alt="alt" />
-                    <div class="card-body d-flex flex-column gap-2">
-                        <h3 class="fz-1 text-dark fw-600 mb-0">GK - CK87</h3>
-                        <div class="card-price d-flex gap-2">
-                            <del class="card-price-old text-dark-80 fz-08">380.000</del>
-                            <del class="text-dark-80 fz-08">đ</del>
-                            <div class="card-price-new text-dark fz-08">280.000</div><span
-                                class="text-dark fz-08">đ</span>
-                        </div>
-                        <div class="card-view d-flex gap-2">
-                            <ion-icon class="card-view-icon text-dark fz-08" name="eye-outline"></ion-icon>
-                            <div class="card-view-text fz-08 text-dark">40000</div><span
-                                class="text-dark fz-08">view</span>
-                        </div>
-                    </div><a class="d-flex justify-content-end" href="#">
-                        <button class="btn-cart p-2 bg-primary border-raac">
-                            <ion-icon class="text-white fz-1" name="cart"></ion-icon>
-                        </button></a>
-                    <div class="sticker-sale position-absolute top-0 start-0 px-3 py-2 border-raac bg-danger fw-500">
-                        <span>SALE </span>
-                    </div>
-                </div>
-            </a></div>
-        <div class="section-product-item col py-3"><a class="unlink" href="#">
-                <div class="card border-white rounded-3 position-relative"><img class="card-img-top img-fluid"
-                        src="./View/layout/images/product-1.jpg" alt="alt" />
-                    <div class="card-body d-flex flex-column gap-2">
-                        <h3 class="fz-1 text-dark fw-600 mb-0">GK - CK87</h3>
-                        <div class="card-price d-flex gap-2">
-                            <del class="card-price-old text-dark-80 fz-08">380.000</del>
-                            <del class="text-dark-80 fz-08">đ</del>
-                            <div class="card-price-new text-dark fz-08">280.000</div><span
-                                class="text-dark fz-08">đ</span>
-                        </div>
-                        <div class="card-view d-flex gap-2">
-                            <ion-icon class="card-view-icon text-dark fz-08" name="eye-outline"></ion-icon>
-                            <div class="card-view-text fz-08 text-dark">40000</div><span
-                                class="text-dark fz-08">view</span>
-                        </div>
-                    </div><a class="d-flex justify-content-end" href="#">
-                        <button class="btn-cart p-2 bg-primary border-raac">
-                            <ion-icon class="text-white fz-1" name="cart"></ion-icon>
-                        </button></a>
-                    <div class="sticker-sale position-absolute top-0 start-0 px-3 py-2 border-raac bg-danger fw-500">
-                        <span>SALE </span>
-                    </div>
-                </div>
-            </a></div>
+        <?=$html_product_sale?>
+
+
+
     </div>
 </section>

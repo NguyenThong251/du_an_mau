@@ -203,27 +203,33 @@ $html_product_view=show_product($product_view);
             <div class="col-md-4">
                 <div class="card"><img class="card-img-top" src="./View/layout/images/person-1" alt="alt" />
                     <div class="card-body">
-                        <h5 class="fw-600 color-primary text-center card-title fz-16">Thong</h5>
+                        <h5 class="fw-600 color-primary text-center card-title fz-16">Ny cua phucs</h5>
                         <p class="card-text fz-12 text-dark text-center">
-                            bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque voluptatibus commodi
+                            voluptate quas, vitae eius maiores quam tempora, velit molestias, temporibus incidunt eos
+                            laudantium repudiandae unde quos culpa praesentium sed!</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card"><img class="card-img-top" src="./View/layout/images/person-1" alt="alt" />
                     <div class="card-body">
-                        <h5 class="fw-600 color-primary text-center card-title fz-16">Thong</h5>
+                        <h5 class="fw-600 color-primary text-center card-title fz-16">ThOng dep trai nhat vu tru</h5>
                         <p class="card-text fz-12 text-dark text-center">
-                            bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, soluta! Dicta perferendis
+                            error voluptate molestias sed assumenda totam omnis tempora voluptatem autem, in blanditiis
+                            itaque amet magnam eius ipsam magni!</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card"><img class="card-img-top" src="./View/layout/images/person-1" alt="alt" />
                     <div class="card-body">
-                        <h5 class="fw-600 color-primary text-center card-title fz-16">Thong</h5>
+                        <h5 class="fw-600 color-primary text-center card-title fz-16">Phucs Ray</h5>
                         <p class="card-text fz-12 text-dark text-center">
-                            bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum voluptate voluptas quam
+                            ratione reprehenderit doloribus consequatur, esse quos itaque inventore sequi tempora ipsum
+                            debitis. Ad, distinctio quidem! Dignissimos, expedita modi!</p>
                     </div>
                 </div>
             </div>

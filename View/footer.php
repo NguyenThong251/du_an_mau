@@ -3,7 +3,7 @@
         <div class="footer-top_header container d-flex justify-content-between border-bottom border-white py-3">
             <div class="footer-top_header__left">
                 <div class="footer-top_header__logo">
-                    <div class="footer-top_header__img"> <img src="/View/layout/images/logo-text.svg" alt=""></div>
+                    <div class="footer-top_header__img"> <img src="./View/layout/images/logo-text.svg" alt=""></div>
                 </div>
             </div>
             <div class="footer-top_header__right d-flex align-items-center gap-4">
@@ -79,13 +79,14 @@
             </div>
         </div>
     </section>
+
 </footer>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule="" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
 </script>
-<script src="layout/assets/js/index.js"></script>
+<script src="./View/layout/assets/js/index.js"></script>
 </body>
 
 </html>

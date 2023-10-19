@@ -41,6 +41,11 @@ function get_user($id)
     $sql = "SELECT * FROM user WHERE id_user=?";
     return  pdo_query_one($sql, $id);
 }
+function get_user_all()
+{
+    $sql = "SELECT * FROM user ORDER BY id_user DESC";
+    return  pdo_query($sql);
+}
 
 
 

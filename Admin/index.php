@@ -4,6 +4,9 @@ ob_start();
 include_once"../Dao/pdo.php";
 include_once"../Dao/danhmuc.php";
 include_once"../Dao/sanpham.php";
+include_once"../Dao/binhluan.php";
+include_once"../Dao/user.php";
+include_once"../Dao/donhang.php";
 include_once"../View/global.php";
 if (isset($_SESSION['s_user'])&&(is_array($_SESSION['s_user']))&&(count($_SESSION['s_user'])>0)) {
     $admin =$_SESSION['s_user'];
@@ -67,8 +70,8 @@ if (isset($_GET['pg'])) {
 
             case 'sanpham':
 
-                // $danhmuc_list = danhmuc_select_all();
-                // $sanpham_list = get_product_all();
+                $danhmuc_list = danhmuc_select_all();
+                $sanpham_list = get_product_all();
                     include_once "public/admin_sanpham.php";
                 break; 
             case 'updatesp':
@@ -103,11 +106,7 @@ if (isset($_GET['pg'])) {
                           //xoa hinh cu tren host
                           $hinh_old="../".PATH_IMG.$_POST['hinh_old'];
                           if (file_exists($hinh_old)) unlink($hinh_old); 
-        
                       }
-                       
-                            
-                        
                         //update vo database
                         update_sanpham($hinh, $id_danhmuc, $ten_sp, $gia, $giam_gia, $sale, $new, $so_luot_xem, $mo_ta, $id_sp);
                       
@@ -153,6 +152,24 @@ if (isset($_GET['pg'])) {
                 $sanpham_list = get_product_all();
                     include_once "public/admin_sanpham.php";
                 break; 
+                case 'donhang':
+                    $bill_list =bill_insert_all();
+                    // $danhmuc_list = danhmuc_select_all();
+                    // $sanpham_list = get_product_all();
+                        include_once "public/admin_donhang.php";
+                    break; 
+                case 'user':
+                    $user_list = get_user_all();
+                    // $danhmuc_list = danhmuc_select_all();
+                    // $sanpham_list = get_product_all();
+                        include_once "public/admin_user.php";
+                    break; 
+                    case 'binhluan':
+                        $binhluan_list = binhluan_select_all();
+                        // $danhmuc_list = danhmuc_select_all();
+                        // $sanpham_list = get_product_all();
+                            include_once "public/admin_cmt.php";
+                        break; 
         default:
             include_once "public/admin_dashboard.php";
             break;

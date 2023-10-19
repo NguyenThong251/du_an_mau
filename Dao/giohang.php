@@ -18,8 +18,10 @@ function view_cart(){
        <div class="col viewCar-name flex-center"><span>'.$ten.'</span></div>
        <div class="col viewCar-price flex-center"><span>'.$gia.'</span><span>₫</span></div>
        <div class="col viewCar-quatity flex-center">
-           <input class="section-detail-primary-right-ship-number text-dark fz-1 border-0 w-30"
-               type="number" name="" value="'.$soluong.'" />
+
+               <input class="section-detail-primary-right-ship-number text-dark fz-1 border-0 w-30" 
+       type="number" name="" max="10" min="1" value="'.$soluong.'" data-id="'.$soluid_spong.'" />
+
        </div>
        <div class="col viewCar-total flex-center"><span>'.$gia_thuc.'</span><span>₫</span></div>
        <div class="viewCart-iconDelete position-absolute top-0 end-0 pointer">

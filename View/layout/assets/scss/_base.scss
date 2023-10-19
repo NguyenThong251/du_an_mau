@@ -195,3 +195,28 @@ a:hover {
     background-color: $bg-third;
   }
 }
+.cart-ani-zom {
+  animation-name: anizom;
+  animation-duration: 0.5s;
+  // transition: ani-zom 0.5s linear;
+}
+
+.cart-ani-zom {
+  animation-name: anizom;
+  animation-duration: 0.5s;
+  transition: ani-zom 0.5s linear;
+}
+
+@keyframes anizom {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.3);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}

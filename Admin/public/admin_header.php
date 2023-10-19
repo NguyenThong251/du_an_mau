@@ -77,9 +77,9 @@
                             <nav class="sb-sidenav-menu-nested nav">
                                 <a class="nav-link" href="index.php?pg=danhmuc">Danh Mục</a>
                                 <a class="nav-link" href="index.php?pg=sanpham">Sản phẩm</a>
-                                <a class="nav-link" href="layout-static.html">Đơn hàng</a>
-                                <a class="nav-link" href="layout-static.html">User</a>
-                                <a class="nav-link" href="layout-static.html">Comment</a>
+                                <a class="nav-link" href="index.php?pg=donhang">Đơn hàng</a>
+                                <a class="nav-link" href="index.php?pg=user">User</a>
+                                <a class="nav-link" href="index.php?pg=binhluan">Comment</a>
                             </nav>
                         </div>
 
